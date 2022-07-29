@@ -1,19 +1,12 @@
-import fetchMovies from './API';
+// import fetchTrendingMovies from './API';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Home/Home';
 
 export const App = () => {
-  fetchMovies();
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <Home />
+      {/* / <Routes><Route to="/" element={<Home />}></Route></Routes> */}
+    </>
   );
 };
