@@ -9,7 +9,27 @@ export const fetchTrendingMovies = () => {
       }
     })
     .then(data => {
-      console.log(data);
+      // console.log(data);
+      const movies = data.results.map(movie => {
+        const movieObj = {
+          id: movie.id,
+          title: movie.title,
+        };
+        return movieObj;
+      });
+      // console.log(movies);
+      return movies;
+    });
+};
+
+export const searchMovieByName = name => {
+  return fetch(`${BASE_URL}search/movie?api_key=${KEY}&query=${name}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then(data => {
       const movies = data.results.map(movie => {
         const movieObj = {
           id: movie.id,
@@ -22,16 +42,17 @@ export const fetchTrendingMovies = () => {
     });
 };
 
-// export const searchMoviebyName = () => {
-//   return fetch(`${BASE_URL}search/company?api_key=${KEY}&page=1`)
-//     .then(response => {
-//       if (response.ok) {
-//         return response.json();
-//       }
-//     })
-//     .then(data => {
-//       console.log(data);
-//     });
-// };
-
-// searchMoviebyName();
+export const searchMovieById = ({ id }) => {
+  return fetch(`${BASE_URL}movie/${id}?api_key=${KEY}`)
+    .then(response => {
+      console.log(response);
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then(data => {
+      console.log(data);
+      return data;
+    });
+};
+// searchMovieById();
