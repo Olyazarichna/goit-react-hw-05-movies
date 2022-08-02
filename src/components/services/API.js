@@ -9,7 +9,6 @@ export const fetchTrendingMovies = () => {
       }
     })
     .then(data => {
-      // console.log(data);
       const movies = data.results.map(movie => {
         const movieObj = {
           id: movie.id,
@@ -17,7 +16,6 @@ export const fetchTrendingMovies = () => {
         };
         return movieObj;
       });
-      // console.log(movies);
       return movies;
     });
 };
@@ -37,7 +35,7 @@ export const searchMovieByName = name => {
         };
         return movieObj;
       });
-      console.log(movies);
+
       return movies;
     });
 };
@@ -45,14 +43,85 @@ export const searchMovieByName = name => {
 export const searchMovieById = ({ id }) => {
   return fetch(`${BASE_URL}movie/${id}?api_key=${KEY}`)
     .then(response => {
-      console.log(response);
       if (response.ok) {
         return response.json();
       }
     })
     .then(data => {
-      console.log(data);
       return data;
     });
 };
-// searchMovieById();
+
+export const fetchDetailsInfo = id => {
+  return fetch(`${BASE_URL}movie/${id}?api_key=${KEY}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then(data => {
+      const details = {
+        id: data.id,
+        title: data.title,
+        popularity: data.popularity,
+        overview: data.overview,
+        poster_path: data.poster_path,
+        genres: data.genres.map(genre => {
+          return genre.name;
+        }),
+      };
+
+      return details;
+    });
+};
+
+// export const fetchCastInfo = id => {
+//   return fetch(`${BASE_URL}movie/${id}/credits?api_key=${KEY}`)
+//     .then(response => {
+//       if (response.ok) {
+//         return response.json();
+//       }
+//     })
+//     .then(data => {
+//       console.log(data);
+//       const actors = data.cast;
+//       actors.map(cast => {
+//         console.log(cast);
+//         const castObj = {
+//           name: cast.name,
+//           character: cast.character,
+//           profile_path: cast.profile_path,
+//         };
+//         console.log(castObj);
+//         return castObj;
+//       });
+//       return actors;
+//     });
+// };
+
+// fetchCastInfo('838330');
+
+export const fetchReviews = id => {
+  return fetch(`${BASE_URL}movie/${id}/reviews?api_key=${KEY}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then(data => {
+      // console.log(data);
+      const reviews = data.results.map(review => {
+        const info = {
+          id: review.id,
+          author: review.author,
+          content: review.content,
+        };
+        // console.log(info);
+        return info;
+      });
+      // console.log(reviews);
+      return reviews;
+    });
+};
+
+fetchReviews('420818');
