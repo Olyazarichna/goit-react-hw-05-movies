@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import * as fetchMoviesAPI from '../components/services/API';
 import MovieList from 'components/MovieList/MovieList';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const name = searchParams.get('name');
@@ -28,3 +28,5 @@ export const Movies = () => {
     </>
   );
 };
+
+export default Movies;

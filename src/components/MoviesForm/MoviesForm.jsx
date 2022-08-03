@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './MoviesForm.module.css';
 
-export const Movies = ({ onSubmit }) => {
+const Movies = ({ onSubmit }) => {
   const [search, setSearch] = useState('');
 
   const handleChange = event => {

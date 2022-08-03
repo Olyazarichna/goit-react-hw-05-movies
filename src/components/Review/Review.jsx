@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './Review.module.css';
 
-export const Review = ({ reviews }) => {
+const Review = ({ reviews }) => {
   return (
     <div>
       {reviews.length > 0 ? (

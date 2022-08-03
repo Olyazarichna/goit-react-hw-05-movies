@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import HomePage from 'components/HomePage/HomePage';
 import * as fetchMoviesAPI from '../components/services/API';
 
-export const Home = () => {
+const Home = () => {
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {

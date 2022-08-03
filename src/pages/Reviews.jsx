@@ -4,7 +4,7 @@ import Review from 'components/Review/Review';
 
 import * as fetchMoviesAPI from '../components/services/API';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './Actors.module.css';
 
-export const Actors = ({ cast }) => {
+const Actors = ({ cast }) => {
   return (
     <>
       <ul className={css.list}>

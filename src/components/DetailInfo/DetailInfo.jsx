@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './DetailInfo.module.css';
 
-export const DetailInfo = ({ movie }) => {
+const DetailInfo = ({ movie }) => {
   return (
     <>
       <div className={css.wrapper}>

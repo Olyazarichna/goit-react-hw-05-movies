@@ -2,16 +2,20 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import css from './NavigationList.module.css';
 
-export const NavigationList = () => {
+const NavigationList = () => {
   return (
     <>
       <h3 className={css.title}>Additional information</h3>
       <ul>
-        <li key={nanoid()}>
-          <NavLink to={'cast'}>Cast</NavLink>
+        <li key={nanoid()} className={css.listItems}>
+          <NavLink to={'cast'} className={css.link}>
+            Cast
+          </NavLink>
         </li>
-        <li key={nanoid()}>
-          <NavLink to={'reviews'}>Reviews</NavLink>
+        <li key={nanoid()} className={css.listItems}>
+          <NavLink to={'reviews'} className={css.link}>
+            Reviews
+          </NavLink>
         </li>
       </ul>
       <Outlet />

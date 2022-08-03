@@ -10,7 +10,9 @@ export const HomePage = ({ movies }) => {
         <ul className={css.list}>
           {movies.map(movie => (
             <li key={movie.id} className={css.listItems}>
-              <NavLink to={`/movies/${movie.id}`}>{movie.title}</NavLink>
+              <NavLink to={`/movies/${movie.id}`} className={css.link}>
+                {movie.title}
+              </NavLink>
             </li>
           ))}
         </ul>
