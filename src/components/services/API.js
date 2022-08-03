@@ -35,7 +35,6 @@ export const searchMovieByName = name => {
         };
         return movieObj;
       });
-
       return movies;
     });
 };
@@ -70,36 +69,33 @@ export const fetchDetailsInfo = id => {
           return genre.name;
         }),
       };
-
       return details;
     });
 };
 
-// export const fetchCastInfo = id => {
-//   return fetch(`${BASE_URL}movie/${id}/credits?api_key=${KEY}`)
-//     .then(response => {
-//       if (response.ok) {
-//         return response.json();
-//       }
-//     })
-//     .then(data => {
-//       console.log(data);
-//       const actors = data.cast;
-//       actors.map(cast => {
-//         console.log(cast);
-//         const castObj = {
-//           name: cast.name,
-//           character: cast.character,
-//           profile_path: cast.profile_path,
-//         };
-//         console.log(castObj);
-//         return castObj;
-//       });
-//       return actors;
-//     });
-// };
+export const fetchCastInfo = id => {
+  return fetch(`${BASE_URL}movie/${id}/credits?api_key=${KEY}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then(data => {
+      const actors = data.cast;
+      actors.map(cast => {
+        const castObj = {
+          id: cast.id,
+          name: cast.name,
+          character: cast.character,
+          profile_path: cast.profile_path,
+        };
+        return castObj;
+      });
+      return actors;
+    });
+};
 
-// fetchCastInfo('838330');
+fetchCastInfo('838330');
 
 export const fetchReviews = id => {
   return fetch(`${BASE_URL}movie/${id}/reviews?api_key=${KEY}`)
@@ -109,19 +105,14 @@ export const fetchReviews = id => {
       }
     })
     .then(data => {
-      // console.log(data);
       const reviews = data.results.map(review => {
         const info = {
           id: review.id,
           author: review.author,
           content: review.content,
         };
-        // console.log(info);
         return info;
       });
-      // console.log(reviews);
       return reviews;
     });
 };
-
-fetchReviews('420818');

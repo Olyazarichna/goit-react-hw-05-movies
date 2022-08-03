@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.container {
+  padding-left: 20px;
+}
+p {
+  font-size: 18px;
+  line-height: 1.3;
+}

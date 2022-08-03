@@ -1,0 +1,30 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.listItems {
+  text-align: center;
+  background-color: rgb(172, 226, 231);
+  border-radius: 4px;
+  width: 250px;
+}
+.img {
+  margin-top: 15px;
+}
+.name {
+  font-weight: 700;
+}
+.name,
+span,
+.text {
+  color: #ffffff;
+}
+span {
+  font-weight: 700;
+}
+.text {
+  font-size: 14px;
+}

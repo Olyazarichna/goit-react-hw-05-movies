@@ -1,0 +1,11 @@
+.title {
+  margin-left: 20px;
+}
+.listItems {
+  font-size: 18px;
+  line-height: 1.3;
+  color: black;
+}
+.listItems::marker {
+  color: rgb(235, 157, 14);
+}

@@ -1,0 +1,15 @@
+.linklist {
+  margin-top: 20px;
+}
+.link {
+  color: rgb(66, 68, 67);
+  font-size: 25px;
+  font-weight: 700;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+  color: rgb(34, 43, 212);
+}

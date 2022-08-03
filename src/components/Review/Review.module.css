@@ -1,0 +1,18 @@
+.list {
+  list-style: none;
+}
+.name {
+  font-weight: 700;
+  font-size: 18px;
+}
+.text {
+  font-size: 16px;
+  line-height: 1.3;
+  padding-right: 20px;
+}
+.review {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 20px;
+  color: #0a0d2d;
+}

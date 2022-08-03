@@ -1,7 +1,8 @@
 import MoviesForm from '../components/MoviesForm/MoviesForm';
-import { NavLink, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as fetchMoviesAPI from '../components/services/API';
+import MovieList from 'components/MovieList/MovieList';
 
 export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,19 +24,7 @@ export const Movies = () => {
   return (
     <>
       <MoviesForm onSubmit={formSubmit} />
-
-      <ul>
-        {search.map(movie => {
-          return (
-            <li key={movie.id}>
-              <NavLink to={`${movie.id}`}>
-                <p>{movie.title}</p>
-              </NavLink>
-            </li>
-          );
-        })}
-      </ul>
-      <p></p>
+      <MovieList search={search} />
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import HomePage from 'components/HomePage/HomePage';
 import * as fetchMoviesAPI from '../components/services/API';
 
 export const Home = () => {
@@ -10,16 +10,7 @@ export const Home = () => {
   }, []);
   return (
     <>
-      <h1>Trending today</h1>
-      {movies && (
-        <ul>
-          {movies.map(movie => (
-            <li key={movie.id}>
-              <NavLink to={`/movies/${movie.id}`}>{movie.title}</NavLink>
-            </li>
-          ))}
-        </ul>
-      )}
+      <HomePage movies={movies} />
     </>
   );
 };

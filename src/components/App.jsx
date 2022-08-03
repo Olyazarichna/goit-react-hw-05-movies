@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Home } from 'pages/Home';
 import { Movies } from 'pages/Movies';
 import { AppBar } from './AppBar/AppBar';
@@ -12,7 +12,6 @@ export const App = () => {
     <div>
       <div>
         <AppBar />
-        <Outlet />
       </div>
 
       <Routes>
