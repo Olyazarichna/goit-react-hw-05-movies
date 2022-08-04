@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
 import css from './DetailInfo.module.css';
+import { Link, useLocation } from 'react-router-dom';
 
 const DetailInfo = ({ movie }) => {
+  const location = useLocation();
   return (
     <>
+      {' '}
+      <Link to={location.state?.from ?? '/'} className={css.btn}>
+        Go back
+      </Link>
       <div className={css.wrapper}>
         {movie && (
           <>

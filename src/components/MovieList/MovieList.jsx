@@ -1,7 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import css from './MovieList.module.css';
 const MovieList = ({ search }) => {
+  const location = useLocation();
+
   return (
     <>
       <ul className={css.list}>
@@ -9,9 +12,13 @@ const MovieList = ({ search }) => {
           const { id, title } = movie;
           return (
             <li key={id} className={css.listItem}>
-              <NavLink to={`${id}`} className={css.link}>
+              <Link
+                to={`${id}`}
+                state={{ from: location }}
+                className={css.link}
+              >
                 <p className={css.movieTitle}>{title}</p>
-              </NavLink>
+              </Link>
             </li>
           );
         })}

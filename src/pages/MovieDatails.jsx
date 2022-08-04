@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import * as fetchMoviesAPI from '../components/services/API';
 import DetailInfo from 'components/DetailInfo/DetailInfo';
 import NavigationList from 'components/NavigationList/NavigationList';
-import Button from 'components/Button/Button';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -15,7 +14,6 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Button />
       <DetailInfo movie={movie} />
       <NavigationList />
     </>
