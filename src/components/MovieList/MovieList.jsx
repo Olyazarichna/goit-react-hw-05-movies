@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
-
 import PropTypes from 'prop-types';
 import css from './MovieList.module.css';
+
 const MovieList = ({ search }) => {
   const location = useLocation();
 
