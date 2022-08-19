@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './Actors.module.css';
-
+import nophoto from './nophoto.png';
 const Actors = ({ cast }) => {
   return (
     <>
@@ -17,8 +17,9 @@ const Actors = ({ cast }) => {
             ) : (
               <img
                 className={css.img}
-                src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
-                alt=""
+                // src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
+                src={nophoto}
+                alt="actor"
                 width="200"
               />
             )}

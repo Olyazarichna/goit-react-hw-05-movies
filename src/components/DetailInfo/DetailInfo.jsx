@@ -31,7 +31,7 @@ const DetailInfo = ({ movie }) => {
               <p className={css.title}>{movie.title}</p>
               <p>Popularity: {movie.popularity} %</p>
               <p>Overview: {movie.overview}</p>
-              {movie.genres ?? <p>Genres: {movie.genres.join(', ')}</p>}
+              {movie.genres && <p>Genres: {movie.genres.join(', ')}</p>}
             </div>
           </>
         )}
